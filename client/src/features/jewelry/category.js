@@ -6,7 +6,7 @@
 //   'category/fetchJewelleryByCategory',
 //   async (_, { rejectWithValue }) => {
 //     try {
-//       const response = await axios.get('http://localhost:3000/api/jewellery/getpost');
+//       const response = await axios.get('https://jewellery-app-wq8v.onrender.com/api/jewellery/getpost');
 //       return response.data;
 //     } catch (error) {
 //       return rejectWithValue(error.response?.data?.message || 'Failed to fetch jewellery data');
@@ -58,7 +58,7 @@ export const fetchJewelleryByCategory = createAsyncThunk(
   'category/fetchJewelleryByCategory',
   async (_, { rejectWithValue }) => {
     try {
-      const response = await axios.get('http://localhost:3000/api/jewellery/getpost');
+      const response = await axios.get('https://jewellery-app-wq8v.onrender.com/api/jewellery/getpost');
       return response.data;
     } catch (error) {
       return rejectWithValue(

@@ -14,7 +14,7 @@ export const registerUser = createAsyncThunk(
       password:userData.password
     }
     try {
-      const res = await axios.post('http://localhost:3000/api/auth/register', payload);
+      const res = await axios.post('https://jewellery-app-wq8v.onrender.com/api/auth/register', payload);
       return res.data;
     } catch (err) {
       return rejectWithValue(err.response?.data?.message || 'Signup failed');

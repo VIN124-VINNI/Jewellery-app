@@ -15,7 +15,7 @@
 // //       formData.append("editorName", payload.editorName);
 // //       formData.append("image", payload.image);
 
-// //       const response = await axios.post("http://localhost:3000/api/jewellery/jewelleryPost'", formData, {
+// //       const response = await axios.post("https://jewellery-app-wq8v.onrender.com/api/jewellery/jewelleryPost'", formData, {
 // //         headers: {
 // //           "Content-Type": "multipart/form-data"
 // //         },
@@ -73,7 +73,7 @@
 //       formData.append("editor", payload.editor); // ✅ Corrected from editorName
 //       formData.append("image", payload.image);
 
-//       const response = await axios.post("http://localhost:3000/api/jewellery/jewelleryPost", formData, {
+//       const response = await axios.post("https://jewellery-app-wq8v.onrender.com/api/jewellery/jewelleryPost", formData, {
 //         headers: {
 //           "Content-Type": "multipart/form-data"
 //         },
@@ -133,7 +133,7 @@ export const createJewellery = createAsyncThunk(
       formData.append("editor", payload.editor);
       formData.append("image", payload.image);
 
-      const response = await axios.post("http://localhost:3000/api/jewellery/jewelleryPost", formData, {
+      const response = await axios.post("https://jewellery-app-wq8v.onrender.com/api/jewellery/jewelleryPost", formData, {
         headers: {
           "Content-Type": "multipart/form-data"
         },

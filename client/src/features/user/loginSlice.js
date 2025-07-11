@@ -5,7 +5,7 @@ export const loginUser = createAsyncThunk(
   'login/loginUser',
   async (credentials, { rejectWithValue }) => {
     try {
-      const res = await axios.post('http://localhost:3000/api/auth/login', credentials);
+      const res = await axios.post('https://jewellery-app-wq8v.onrender.com/api/auth/login', credentials);
       localStorage.setItem('token', res.data.token); // store token
       return res.data;
     } catch (err) {

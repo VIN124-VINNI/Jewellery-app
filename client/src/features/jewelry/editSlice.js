@@ -15,7 +15,7 @@ export const EditJewellerySlice = createAsyncThunk(
       }
 
       const res = await axios.put(
-        `http://localhost:3000/api/jewellery/jewelleryPut/${id}`,
+        `https://jewellery-app-wq8v.onrender.com/api/jewellery/jewelleryPut/${id}`,
         updated,
         {
           headers: {

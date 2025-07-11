@@ -8,7 +8,7 @@ export default defineConfig({
   server: {
     proxy: {
       '/api': {
-        target: 'http://localhost:3000',
+        target: 'https://jewellery-app-wq8v.onrender.com',
         changeOrigin: true,
         secure: false,
       },

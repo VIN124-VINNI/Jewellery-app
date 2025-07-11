@@ -7,7 +7,7 @@ export const fetchJewelleryData = createAsyncThunk(
   'alldata/fetchJewelleryData',
   async (_, { rejectWithValue }) => {
     try {
-      const res = await axios.get('http://localhost:3000/api/jewellery/getpost');
+      const res = await axios.get('https://jewellery-app-wq8v.onrender.com/api/jewellery/getpost');
       return res.data;
     } catch (err) {
       return rejectWithValue(err.response?.data?.message || 'Failed to fetch jewellery data');

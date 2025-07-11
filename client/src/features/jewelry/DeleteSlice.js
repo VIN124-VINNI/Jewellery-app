@@ -6,7 +6,7 @@ export const deleteJewellery = createAsyncThunk(
   'jewellery/deleteJewellery',
   async (id, { rejectWithValue }) => {
     try {
-      const response = await axios.delete(`http://localhost:3000/api/jewellery/delete/${id}`);
+      const response = await axios.delete(`https://jewellery-app-wq8v.onrender.com/api/jewellery/delete/${id}`);
       return response.data; // expected: { message: '...', item: {...} }
     } catch (error) {
       return rejectWithValue(error.response?.data?.message || 'Failed to delete jewellery item');
