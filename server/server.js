@@ -17,11 +17,11 @@ app.use(cors({
 app.use(express.json());
 
 // Route user files
-const putRoutesuser = require("./Api/routes/auth user/authPutRoutes.js");
-const authgetRoutes = require("./Api/routes/auth user/authgetRoutes.js");
-const deleteRoutesuser = require("./Api/routes/auth user/authdeleteRoutes.js");
-const loginRoutes = require("./Api/routes/auth user/login.js");
-const registerRoutes = require("./Api/routes/auth user/register.js");
+const putRoutesuser = require("./Api/routes/authuser/authPutRoutes.js");
+const authgetRoutes = require("./Api/routes/authuser/authgetRoutes.js");
+const deleteRoutesuser = require("./Api/routes/authuser/authdeleteRoutes.js");
+const loginRoutes = require("./Api/routes/authuser/login.js");
+const registerRoutes = require("./Api/routes/authuser/register.js");
 
 // Route jewellery files
 const putRoutes = require("./Api/routes/authRoutes/putRoutes.js");
