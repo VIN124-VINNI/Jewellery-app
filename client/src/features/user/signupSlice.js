@@ -1,20 +1,25 @@
-
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
+import Cookies from 'js-cookie';
 
-// 🔹 Thunk for Registering User
 export const registerUser = createAsyncThunk(
   'signup/registerUser',
   async (userData, { rejectWithValue }) => {
-    console.log(userData,'sdjfhsdf')
+    const payload = {
+      username: userData.name,
+      email: userData.email,
+      password: userData.password
+    };
 
-    const payload={
-      username:userData.name,
-      email:userData.email,
-      password:userData.password
-    }
     try {
-      const res = await axios.post('https://jewellery-app-wq8v.onrender.com/api/auth/register', payload);
+      const res = await axios.post(
+        'https://jewellery-app-wq8v.onrender.com/api/auth/register',
+        payload
+      );
+
+      // ✅ Store userId in cookie (1 day)
+      Cookies.set('userId', res.data.user._id, { expires: 1 });
+
       return res.data;
     } catch (err) {
       return rejectWithValue(err.response?.data?.message || 'Signup failed');
@@ -22,7 +27,6 @@ export const registerUser = createAsyncThunk(
   }
 );
 
-// 🔹 Slice
 const signupSlice = createSlice({
   name: 'signup',
   initialState: {

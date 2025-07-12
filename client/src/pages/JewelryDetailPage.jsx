@@ -74,7 +74,7 @@ function SingleJewellery() {
       <img
         src={singleJewellery.image}
         alt={singleJewellery.name}
-        className="w-full h-64 sm:h-72 md:h-80 lg:h-96 object-cover rounded mb-4"
+        className="w-full h-40 sm:h-72 md:h-80 lg:h-96 object-cover rounded mb-4"
       />
 
       <h1 className="text-2xl sm:text-3xl font-bold">{singleJewellery.name}</h1>

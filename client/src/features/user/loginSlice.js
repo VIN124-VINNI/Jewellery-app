@@ -1,12 +1,22 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
+import Cookies from 'js-cookie';
 
 export const loginUser = createAsyncThunk(
   'login/loginUser',
   async (credentials, { rejectWithValue }) => {
     try {
-      const res = await axios.post('https://jewellery-app-wq8v.onrender.com/api/auth/login', credentials);
-      localStorage.setItem('token', res.data.token); // store token
+      const res = await axios.post(
+        'https://jewellery-app-wq8v.onrender.com/api/auth/login',
+        credentials
+      );
+
+      // ✅ Store token
+      // localStorage.setItem('token', res.data.token);
+console.log(res,'gggggg')
+      // ✅ Store userId in cookie
+      Cookies.set('userId', res.data.user.id, { expires: 1 });
+
       return res.data;
     } catch (err) {
       return rejectWithValue(err.response?.data?.message || 'Login failed');
@@ -27,7 +37,9 @@ const loginSlice = createSlice({
     logout: (state) => {
       state.token = null;
       state.user = null;
+      state.success = false;
       localStorage.removeItem('token');
+      Cookies.remove('userId'); // ✅ clear cookie on logout
     },
   },
   extraReducers: (builder) => {

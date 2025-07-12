@@ -39,7 +39,7 @@ function DeleteJewellery({ id }) {
       </button>
 
       {showModal && (
-        <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50">
+        <div className="fixed inset-0  bg-opacity-50 flex justify-center items-center z-50">
           <div className="bg-white rounded-lg p-6 w-full max-w-md shadow-lg">
             <h2 className="text-lg font-semibold mb-4 text-red-600">Confirm Delete</h2>
             <p className="mb-6">Are you sure you want to delete this jewellery item?</p>
